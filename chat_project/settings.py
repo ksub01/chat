@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-0$&fwhabq73x_*dp%bx42+j%+_4(&sb%^qn0ggr9h-ep+_dnse
 DEBUG = False 
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+CSRF_TRUSTED_ORIGINS = ['https://chat-seven-ruddy.vercel.app']
 
 # Application definition
 
