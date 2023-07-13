@@ -24,10 +24,9 @@ from django.contrib import admin
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('', include('api.urls')),
     # re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('admin/', admin.site.urls),
-    path('chatapp/', include('chat.urls')),
+    path('', include('chat.urls')),
     # path("__debug__/", include("debug_toolbar.urls")),
 ]
 

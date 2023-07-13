@@ -3,6 +3,7 @@ from . import serializers
 from .models import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.renderers import TemplateHTMLRenderer 
 
 
 class UserCreate(generics.CreateAPIView):
@@ -20,6 +21,7 @@ class ChatList(generics.ListAPIView):
 
 class ChatCreate(generics.CreateAPIView):
     serializer_class = serializers.ChatSerializer
+
 
 class MessageList(generics.ListAPIView):
 
