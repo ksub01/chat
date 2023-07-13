@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0$&fwhabq73x_*dp%bx42+j%+_4(&sb%^qn0ggr9h-ep+_dnse'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True 
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 CSRF_TRUSTED_ORIGINS = ['https://chat-seven-ruddy.vercel.app']
