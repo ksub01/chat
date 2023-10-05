@@ -109,25 +109,22 @@ class ChatViewTests(APITestCase):
         chat_url = reverse('chats-list')
         res = self.client.post(chat_url, {'users': user_id, 'name': 'video'})
 
-        now = datetime.datetime.now().isoformat() + 'Z'
-        new_message_1 = {'author': user_id, 'chat': 1, 'text': 'nonono1', 'created_at': now}
-
         messages_url = reverse('messages-list') 
-        response_1 = self.client.post(messages_url, new_message_1)
-        self.assertEqual(response_1.status_code, status.HTTP_201_CREATED) 
+        now = datetime.datetime.now().isoformat() + 'Z'
+        messages = [{'author': user_id, 'chat': 1, 'text': 'nonono1', 'created_at': now},
+                    {'author': user_id, 'chat': 1, 'text': 'nonono2', 'created_at': now},
+                    ]
 
-        message_url = reverse('messages-detail', args=[1]) 
-        created_response = self.client.get(message_url)
+        for message in messages:
+            creating_message = self.client.post(messages_url, message)
+            self.assertEqual(creating_message.status_code, status.HTTP_201_CREATED) 
 
-        new_message_2 = {'author': user_id, 'chat': 1, 'text': 'nonono2', 'created_at': now}
-        response_2 = self.client.post(messages_url, new_message_2)
-        self.assertEqual(response_2.status_code, status.HTTP_201_CREATED) 
-
-        message_url = reverse('messages-detail', args=[2]) 
-        created_response = self.client.get(message_url)
+            message_url = reverse('messages-detail', args=[1]) 
+            created_response = self.client.get(message_url)
+            self.assertEqual(created_response.status_code, status.HTTP_200_OK) 
 
         self.assertEqual(created_response.status_code, status.HTTP_200_OK) 
-        self.assertEqual(Message.objects.count(), 2)
+        self.assertEqual(Message.objects.count(), len(messages))
         self.assertEqual(Message.objects.get(pk=1).text, 'nonono1')
         self.assertEqual(Message.objects.get(pk=2).text, 'nonono2')
 
