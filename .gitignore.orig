@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-**/venv
-=======
-venv/
->>>>>>> origin/main
-db.sqlite3

@@ -1,17 +1,4 @@
 asgiref==3.7.2
-<<<<<<< HEAD
-Django==4.2.3
-djangorestframework==3.14.0
-drf-yasg==1.21.6
-gunicorn==20.1.0
-inflection==0.5.1
-packaging==23.1
-psycopg2-binary==2.9.6
-pytz==2023.3
-PyYAML==6.0
-sqlparse==0.4.4
-uritemplate==4.1.1
-=======
 certifi==2023.7.22
 cffi==1.15.1
 charset-normalizer==3.2.0
@@ -39,4 +26,3 @@ social-auth-core==4.4.2
 sqlparse==0.4.4
 uritemplate==4.1.1
 urllib3==2.0.4
->>>>>>> origin/main

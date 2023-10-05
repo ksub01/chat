@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-from django.test import TestCase
-
-# Create your tests here.
-=======
 import datetime
 
 from django.test import TestCase
@@ -136,4 +131,3 @@ class ChatViewTests(APITestCase):
         self.assertEqual(Message.objects.get(pk=1).text, 'nonono1')
         self.assertEqual(Message.objects.get(pk=2).text, 'nonono2')
 
->>>>>>> origin/main
