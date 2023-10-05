@@ -20,6 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'django-insecure-0$&fwhabq73x_*dp%bx42+j%+_4(&sb%^qn0ggr9h-ep+_dnse'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -27,31 +28,58 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 CSRF_TRUSTED_ORIGINS = ['https://chat-seven-ruddy.vercel.app']
+=======
+SECRET_KEY = 'django-insecure-*zvwo#fh$2djuche(v&h)0#h_l8b=v2%aj&s5+vyi6n4+a88q5'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
+
+>>>>>>> origin/main
 
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
+=======
+    'chat.apps.ChatConfig',
+    'rest_framework',
+>>>>>>> origin/main
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'chat.apps.ChatConfig',
     'rest_framework',
     # 'drf_yasg',
     # 'debug_toolbar',
+=======
+    'drf_yasg',
+    'rest_framework.authtoken',
+    'djoser',
+>>>>>>> origin/main
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+<<<<<<< HEAD
     # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
+=======
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+>>>>>>> origin/main
 ]
 
 ROOT_URLCONF = 'chat_project.urls'
@@ -78,6 +106,7 @@ WSGI_APPLICATION = 'chat_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+<<<<<<< HEAD
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -96,6 +125,16 @@ DATABASES = {
     }
 }
 
+=======
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+
+>>>>>>> origin/main
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -136,9 +175,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+<<<<<<< HEAD
 
 INTERNAL_IPS = [
     # ...
     "127.0.0.1",
     # ...
 ]
+=======
+>>>>>>> origin/main
