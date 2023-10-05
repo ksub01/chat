@@ -1,12 +1,14 @@
 import datetime
+
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.utils import timezone
-from .models import Message, Chat
-from rest_framework.test import APITestCase
 from django.urls import reverse
-from .serializers import *
+from rest_framework.test import APITestCase
 from rest_framework import status
+
+from .models import Message, Chat
+from .serializers import *
 
 
 class ChatModelTests(APITestCase):
